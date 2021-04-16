@@ -10,7 +10,6 @@ class Zabbix:
         self.auth = ""
     
     def login(self, usuario, senha):
-        self.usuario = usuario
         payload = {
             "jsonrpc": "2.0",
             "method": "user.login",
