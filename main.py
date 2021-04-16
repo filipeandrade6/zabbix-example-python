@@ -33,7 +33,7 @@ class Zabbix:
         }
         _ = requests.post(self.zabbix_url, data=json.dumps(payload), headers={"Content-type": "application/json"})
 
-    # Exemplo de método que pega os gráficos que um host
+    # Exemplo de método que pega os gráficos de um host
     def graphs_from_host(self, hostid):
         payload = {
             "jsonrpc": "2.0",
