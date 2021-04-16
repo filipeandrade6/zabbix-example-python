@@ -66,8 +66,9 @@ try:
     z.graphs_from_host(hostid)
 
 except Exception:
-    # Exibi na tela em caso de erro
+    # Em caso de erro na execução printa no terminal
     print(traceback.format_exc())
+    
 finally:
-    # No final ou em caso aconteça erro na execução é executado o logout
+    # No final ou em caso aconteça de erro na execução é feito o logout
     z.logout()
