@@ -7,7 +7,6 @@ import traceback
 class Zabbix:
     def __init__(self, endereco_zabbix):
         self.zabbix_url = "http://" + endereco_zabbix + "/zabbix/api_jsonrpc.php"
-        self.usuario = ""
         self.auth = ""
     
     def login(self, usuario, senha):
@@ -16,7 +15,7 @@ class Zabbix:
             "jsonrpc": "2.0",
             "method": "user.login",
             "params": {
-                "user": self.usuario,
+                "user": usuario,
                 "password": senha,
                 },
             "auth": None,
