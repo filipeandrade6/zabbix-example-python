@@ -33,7 +33,6 @@ class Zabbix:
         }
         _ = requests.post(self.zabbix_url, data=json.dumps(payload), headers={"Content-type": "application/json"})
 
-    # Exemplo de método que pega os gráficos de um host
     def graphs_from_host(self, hostid):
         payload = {
             "jsonrpc": "2.0",
@@ -58,15 +57,14 @@ usuario_zabbix = input("usuario: ")
 senha_zabbix = getpass("senha: ")
 hostid = input("HostID: ")
 
+
 try:
     z = Zabbix(endereco_zabbix)
     z.login(usuario_zabbix, senha_zabbix)
     z.graphs_from_host(hostid)
 
 except Exception:
-    # Em caso de erro na execução printa no terminal
     print(traceback.format_exc())
     
 finally:
-    # No final ou em caso aconteça de erro na execução é feito o logout
     z.logout()
